@@ -24,6 +24,7 @@ Project is: _in progress_
 ## To-do
 * Add more expansions
 * load expansion files automatically? Or add new column in csv with expansion name
+* Add loop for display...
 
 ## Author
 Created by ghost
