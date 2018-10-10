@@ -6,6 +6,7 @@
 * [Technologies](#technologies)
 * [Status](#status)
 * [To-do](#to-do)
+* [Done](#done)
 * [Author](#author)
 
 ## General info
@@ -23,6 +24,10 @@ Project is: _in progress_
 
 ## To-do
 * Add more expansions
+* Make exe
+* maybe show card type (text formatting fun)
+
+## done
 * load expansion files automatically? Or add new column in csv with expansion name
 * Add loop for display...
 

@@ -7,11 +7,19 @@ from random import *
 #---------------------------------------
 def losowanie():
 
-
+    # w przestrzeni funkcji losowanie bedziemy uzywac globalnej zmiennej numer_losowania.
+    # musimy pythonowi powiedziec, ze zmienna numer_losowania, ktora bedziemy sie poslugiwac jest globalna, zeby jej nie tworzyl podczas kazdorazowego wywolania funkcji
+    # potem juz mozemy spokojnie uzywac numer_losowania - python bedzie wiedzial, ze to zmienna globalna
+    global numer_losowania
+   
     #wyczysc liste kart
     #checkboxy dodaja, nie usuwaja
     #odznaczenie checkbosa nie usuwa kart z list
     del karty_nazwy[:]
+
+    #set zmiennych wykorzystanych w petli do drukowania wynikow
+    licznik = 1
+    i = 0
     
     #sprawdz checkboxy
     if c1_var.get() == 1:
@@ -47,35 +55,29 @@ def losowanie():
     #INSERT to mark - aktualna pozycja kursora - jesli ktos kliknie w okienko, to kursor sie przestawi i kolejne linijki nie beda wrzucane na koncu, tylko tam, gdzie jest kursor
     #jesli ustawimy insert na koncu, to kolejne linijki sa wrzudane na koncu
     T.mark_set(INSERT,END)
-    T.insert(INSERT, "Wylosowane karty\n")
+    #czemu to nie dziala w jednej linijce T.insert(INSERT, "Wylosowane karty (", numer_losowania, ")\n")
+    T.insert(INSERT, "Wylosowane karty (")
+    T.insert(INSERT, numer_losowania)
+    T.insert(INSERT, ")\n")
+    
     T.insert(INSERT, "--------------------------------------")
     T.insert(INSERT, "\n")
-    T.insert(INSERT, losuj_10_kart[0])
-    T.insert(INSERT, "\n")
-    T.insert(INSERT, losuj_10_kart[1], "\n")
-    T.insert(INSERT, "\n")
-    T.insert(INSERT, losuj_10_kart[2], "\n")
-    T.insert(INSERT, "\n")
-    T.insert(INSERT, losuj_10_kart[3], "\n")
-    T.insert(INSERT, "\n")
-    T.insert(INSERT, losuj_10_kart[4], "\n")
-    T.insert(INSERT, "\n")
-    T.insert(INSERT, losuj_10_kart[5], "\n")
-    T.insert(INSERT, "\n")
-    T.insert(INSERT, losuj_10_kart[6], "\n")
-    T.insert(INSERT, "\n")
-    T.insert(INSERT, losuj_10_kart[7], "\n")
-    T.insert(INSERT, "\n")
-    T.insert(INSERT, losuj_10_kart[8], "\n")
-    T.insert(INSERT, "\n")
-    T.insert(INSERT, losuj_10_kart[9], "\n")
-    T.insert(INSERT, "\n")
+
+    while licznik <=10:
+        T.insert(INSERT, losuj_10_kart[i], "\n")
+        T.insert(INSERT, "\n")
+
+        i+=1
+        licznik+=1
+    
     T.insert(INSERT, "--------------------------------------")
     T.insert(INSERT, "\n")
     #focus okna na ostatniej linijce (ale nie focus kursora)
     T.see(END)
 
-
+    # przed wyjsciem z funkcji zwiekszymy wartosc numer_losowania o jeden
+    numer_losowania +=1
+    
 def dodaj_do_listy(nazwa_pliku):
     with open(nazwa_pliku, 'r') as f:
         reader = csv.reader(f,delimiter=';')
@@ -121,6 +123,11 @@ karty_nazwy = []
 
 #define new mark
 my_mark = StringVar()
+
+# numer_losowania pozwala latwiej zorientowac sie, ktore losowanie z okan wynikow jest najnowsze
+# jest to zmienna globalna, ktora jest potem zwiekszana przy kazdorazowym wykonaniu funkcji losowanie
+numer_losowania = 0
+
 
 #--------------------------------------
 

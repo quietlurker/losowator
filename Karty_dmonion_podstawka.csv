@@ -1,26 +1,26 @@
-Nazwa karty;typ karty
-Cellar;Action
-Chapel;Action
-Moat;Action – Reaction
-Chancellor;Action
-Village;Action
-Woodcutter;Action
-Workshop;Action
-Bureaucrat;Action – Attack
-Feast;Action
-Gardens;Victory
-Militia;Action – Attack
-Moneylender;Action
-Remodel;Action
-Smithy;Action
-Spy;Action – Attack
-Thief;Action – Attack
-Throne Room;Action
-Council Room;Action
-Festival;Action
-Laboratory;Action
-Library;Action
-Market;Action
-Mine;Action
-Witch;Action – Attack
-Adventurer;Action
+Nazwa karty [podstawka];typ karty
+Cellar [podstawka];Action [podstawka]
+Chapel [podstawka];Action
+Moat [podstawka];Action – Reaction
+Chancellor [podstawka];Action
+Village [podstawka];Action
+Woodcutter [podstawka];Action
+Workshop [podstawka];Action
+Bureaucrat [podstawka];Action – Attack
+Feast [podstawka];Action
+Gardens [podstawka];Victory
+Militia [podstawka];Action – Attack
+Moneylender [podstawka];Action
+Remodel [podstawka];Action
+Smithy [podstawka];Action
+Spy [podstawka];Action – Attack
+Thief [podstawka];Action – Attack
+Throne Room [podstawka];Action
+Council Room [podstawka];Action
+Festival [podstawka];Action
+Laboratory [podstawka];Action
+Library [podstawka];Action
+Market [podstawka];Action
+Mine [podstawka];Action
+Witch [podstawka];Action – Attack
+Adventurer [podstawka];Action
